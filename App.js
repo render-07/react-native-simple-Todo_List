@@ -6,6 +6,19 @@ export default function App() {
   const [task, setTask] = useState();
   const [taskItems, setTaskItems] = useState([]);
 
+  const handleAddTasks = () => {
+    console.log(task);
+    Keyboard.dismiss();
+    setTaskItems([...taskItems, task]);
+    setTask(null);
+  }
+
+  const completeTask = (index) => {
+    let itemsCopy = [...taskItems];
+    itemsCopy.splice(index,1);
+    setTaskItems(itemsCopy);
+  }
+  
   <View style={styles.container}>
 
       {/* Today's Tasks */}

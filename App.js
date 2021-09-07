@@ -3,6 +3,7 @@ import { Keyboard, KeyboardAvoidingView, Platform, StyleSheet, Text, TextInput, 
 import Task from './components/Task';
 
 export default function App() {
+
   const [task, setTask] = useState();
   const [taskItems, setTaskItems] = useState([]);
 
@@ -18,10 +19,9 @@ export default function App() {
     itemsCopy.splice(index,1);
     setTaskItems(itemsCopy);
   }
-
+  
   return (
-
-  <View style={styles.container}>
+    <View style={styles.container}>
 
       {/* Today's Tasks */}
       <View styles={styles.taskWrapper}>
@@ -33,18 +33,20 @@ export default function App() {
             taskItems.map((item, index) => {
               return (
                 <TouchableOpacity key = {index} onPress = {() => completeTask(index)}>
-                  <Task jakol = {item}/>
+                  <Task item = {item}/>
                 </TouchableOpacity>
               )
             })
 
 
           }
+
         </View>
+
       </View>
 
-      {/* Adding goes here Tasks */}
-      
+      {/* Adding tasks goes here */}
+
       <KeyboardAvoidingView 
       behavior = {Platform.OS === "ios" ? "padding" : "height"}
       style = {styles.writeTaskWrapper}>
@@ -62,7 +64,9 @@ export default function App() {
         </TouchableOpacity>
 
       </KeyboardAvoidingView>
-      
+
+
+
     </View>
   );
 }

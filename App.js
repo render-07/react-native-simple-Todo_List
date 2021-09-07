@@ -18,7 +18,9 @@ export default function App() {
     itemsCopy.splice(index,1);
     setTaskItems(itemsCopy);
   }
-  
+
+  return (
+
   <View style={styles.container}>
 
       {/* Today's Tasks */}
@@ -62,6 +64,7 @@ export default function App() {
       </KeyboardAvoidingView>
       
     </View>
+  );
 }
 
 const styles = StyleSheet.create({

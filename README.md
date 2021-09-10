@@ -12,6 +12,6 @@ To download the application's dependencies.
 
 Runs the app in the development mode. Also mind the database connection string.
 
-To test the application, your mobile device needs the expo application or use Android Studio in PC.
+To test the application, your mobile device needs the Expo Go application or use Android Studio in PC.
 
 ### This is for educational purpose only.
